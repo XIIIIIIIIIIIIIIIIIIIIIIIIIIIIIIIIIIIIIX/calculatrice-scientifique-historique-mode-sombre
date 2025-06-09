@@ -1,0 +1,178 @@
+
+        :root {
+            --bg-color: #f0f0f0;
+            --calculator-bg: #fff;
+            --display-bg: #e6e6e6;
+            --button-bg: #f9f9f9;
+            --button-hover: #e0e0e0;
+            --button-active: #d0d0d0;
+            --primary-color: #333;
+            --secondary-color: #666;
+            --border-color: #ddd;
+            --history-border: #ddd;
+            --history-bg: #f8f8f8;
+        }
+
+        .dark-mode {
+            --bg-color: #121212;
+            --calculator-bg: #1e1e1e;
+            --display-bg: #2d2d2d;
+            --button-bg: #252525;
+            --button-hover: #353535;
+            --button-active: #454545;
+            --primary-color: #e0e0e0;
+            --secondary-color: #aaa;
+            --border-color: #333;
+            --history-border: #333;
+            --history-bg: #252525;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            min-height: 100vh;
+            margin: 0 auto;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .calculator {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--calculator-bg);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .history-panel {
+            width: 300px;
+            background-color: var(--history-bg);
+            border-radius: 15px;
+            padding: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .display {
+            background-color: var(--display-bg);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: right;
+            font-size: 2em;
+            min-height: 90px;
+            word-wrap: break-word;
+            border: 1px solid var(--border-color);
+        }
+
+        #result {
+            font-size: 1.5em;
+            color: var(--secondary-color);
+            min-height: 30px;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 15px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background-color: var(--button-bg);
+            color: var(--primary-color);
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--button-hover);
+        }
+
+        .btn:active {
+            background-color: var(--button-active);
+        }
+
+        .equals {
+            background-color: #427D9D;
+            color: white;
+        }
+
+        .equals:hover {
+            background-color: #35647e;
+        }
+
+        .controls {
+            background-color: #7895CB;
+            color: white;
+        }
+
+        .controls:hover {
+            background-color: #5a77b1;
+        }
+
+        .function {
+            background-color: #7FBCD2;
+            color: white;
+        }
+
+        .function:hover {
+            background-color: #64a5bf;
+        }
+
+        .theme-btn {
+            background-color: transparent;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: var(--primary-color);
+            float: right;
+            padding: 10px;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        #history-list {
+            max-height: calc(100vh - 150px);
+            overflow-y: auto;
+        }
+
+        .history-entry {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--history-border);
+        }
+
+        .history-entry:last-child {
+            border-bottom: none;
+        }
+
+        .history-expression {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .history-result {
+            color: var(--secondary-color);
+            text-align: right;
+        }
